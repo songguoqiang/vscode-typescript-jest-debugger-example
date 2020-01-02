@@ -376,3 +376,8 @@ as usual, but also set breakpoints in both the tests (_i.e.,_ in `__tests__/base
 as well as in the code (_e.g.,_ `src/core/functions.ts`) and the debugger will find them.
 
 Note that I tested all this on Node 12.x with VS Code version 1.41.1.
+
+## Dealing with Jest configuration
+
+You have several options to configure Jest. Remember to adjust launch args accordingly by specifying your Jest configuration through "--config <path/to/jest.config.js|json>".
+If you’ve defined Jest configuration in the package.json file of your project you can (and should) remove the "--config" and path arguments from your launch config.
