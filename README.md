@@ -1,4 +1,10 @@
-# Sample Project using ts-jest
+# README
+
+## Credit
+
+This project is forked from https://github.com/mtiller/ts-jest-sample. The original debugger configuration didn't work for me, so I updated it.
+
+## How to debug jest test cases with TypeScript, ts-jest and VS Code
 
 The goal in this project is to create a TypeScript project that can do all of the following:
 
@@ -23,8 +29,6 @@ Then, I install `typescript`, `jest`, `ts-jest` and `@types/jest` as dependencie
 ```sh
 $ yarn add -D typescript jest ts-jest @types/jest
 ```
-
-At the time of this writing, that means `typescript@2.7.1`, `jest@22.1.4` and `ts-jest@22.0.2`.
 
 ### TypeScript
 
@@ -346,17 +350,24 @@ a `.vscode/launch.json` file that looks like this:
 
 ```json
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Debug Jest Tests",
-            "type": "node",
-            "request": "launch",
-            "runtimeArgs": ["--inspect-brk", "${workspaceRoot}/node_modules/.bin/jest", "--runInBand"],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen"
-        }
-    ]
+    "name": "ts-jest-sample",
+    "version": "0.1.0",
+    "description": "A simple project to demonstrate TypeScript + Jest + ts-jest",
+    "main": "lib/src/index.js",
+    "typings": "lib/src/index.d.ts",
+    "repository": "github.com:xogeny/ts-jest-sample",
+    "author": "Michael M. Tiller",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "^24.0.25",
+        "jest": "^24.9.0",
+        "ts-jest": "^24.2.0",
+        "typescript": "^3.7.4"
+    },
+    "scripts": {
+        "compile": "tsc",
+        "test": "jest --env=node --colors --coverage test"
+    }
 }
 ```
 
@@ -364,6 +375,4 @@ I was pleasantly surprised to find that I could not only run my tests and get co
 as usual, but also set breakpoints in both the tests (_i.e.,_ in `__tests__/base.spec.ts`)
 as well as in the code (_e.g.,_ `src/core/functions.ts`) and the debugger will find them.
 
-Note that I tested all this on Node 8.x. I've seen issues with debugging using Node 6.x so
-if you are having trouble there, you might consider upgrading (or let, if you manage to fix
-it, submit a PR for this README explaining the fix).
+Note that I tested all this on Node 12.x with VS Code version 1.41.1.
