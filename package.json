@@ -8,10 +8,10 @@
     "author": "Michael M. Tiller",
     "license": "MIT",
     "devDependencies": {
-        "@types/jest": "^22.1.1",
-        "jest": "^22.1.4",
-        "ts-jest": "^22.0.2",
-        "typescript": "^2.7.1"
+        "@types/jest": "^24.0.25",
+        "jest": "^24.9.0",
+        "ts-jest": "^24.2.0",
+        "typescript": "^3.7.4"
     },
     "scripts": {
         "compile": "tsc",
